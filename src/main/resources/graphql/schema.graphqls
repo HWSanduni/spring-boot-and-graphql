@@ -1,0 +1,46 @@
+type Query{
+    findAll:ResponseData
+    findCustomer(firstName:String):ResponseDTO
+}
+
+type ResponseDTO {
+    message:String
+    data:CustomerDTO
+}
+
+type ResponseData {
+    message:String
+    data:[CustomerDTO]
+}
+
+type CustomerEntity{
+    id:Int
+    address:String
+    email:String
+    firstName:String
+    lastName:String
+    phoneNumber:String
+
+}
+type Mutation {
+    addNewCustomer(customer:CustomerInput):String
+    updateCustomer(id:Int,customer:CustomerInput) :String
+    deleteCustomer(id:Int):String
+}
+
+input CustomerInput{
+    id:Int
+    address:String
+    email:String
+    firstName:String
+    lastName:String
+    phoneNumber:String
+}
+type CustomerDTO {
+    id:Int
+    address:String
+    email:String
+    firstName:String
+    lastName:String
+    phoneNumber:String
+}

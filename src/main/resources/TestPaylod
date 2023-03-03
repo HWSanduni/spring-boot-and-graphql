@@ -1,0 +1,57 @@
+--------save Customer-------
+
+mutation{
+  addNewCustomer(customer:{
+        address :"Maharagama",
+    email:"kamal@gmail.com",
+    firstName:"kamal",
+    lastName:"amal",
+    phoneNumber:"077712345678"
+  })
+}
+
+-----------update Customer -------------
+mutation{
+  updateCustomer(id:3,customer:{
+    id:3,
+    address:"Colombo",
+    email:"kamal@gmail.com",
+    firstName:"kamal",
+    lastName:"amal",
+    phoneNumber:"077712345678"
+  })
+}
+
+-------------find All Customer ------------
+query{
+   findAll{
+     message
+     data{
+     id
+     address
+     email
+     firstName
+     lastName
+     phoneNumber
+     }
+   }
+ }
+
+---------- find Customer -------------
+ query{
+   findCustomer(firstName:"sunil"){
+     message
+     data{
+     id
+     address
+     email
+     firstName
+     lastName
+     phoneNumber
+     }
+   }
+ }
+ --------------delete Customer -----------
+   mutation{
+      deleteCustomer(id:2)
+    }
